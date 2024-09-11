@@ -12,8 +12,6 @@ cask "freecad-weekly" do
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
-  conflicts_with cask: "homebrew/homebrew-cask/freecad"
-  conflicts_with cask: "Andor/homebrew-freecad/freecad-weekly"
   depends_on macos: ">= :mojave"
 
   app "FreeCAD.app"
