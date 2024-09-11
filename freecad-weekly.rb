@@ -1,4 +1,4 @@
-cask "freecad" do
+cask "freecad-weekly" do
   arch arm: "arm64", intel: "intel-x86_64"
 
   version "38643"
@@ -7,26 +7,14 @@ cask "freecad" do
 
   url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD-weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
       verified: "github.com/FreeCAD/FreeCAD-Bundle/"
+
   name "FreeCAD"
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
-  # Upstream uses GitHub releases to indicate that a version is released
-  # (there's also sometimes a notable gap between the release being created
-  # and the homepage being updated), so the `GithubLatest` strategy is necessary.
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
-  depends_on macos: ">= :sierra"
+  conflicts_with cask: "homebrew/homebrew-cask/freecad"
+  conflicts_with cask: "Andor/homebrew-freecad/freecad-weekly"
+  depends_on macos: ">= :mojave"
 
   app "FreeCAD.app"
-
-  zap trash: [
-    "~/Library/Application Support/FreeCAD",
-    "~/Library/Caches/FreeCAD",
-    "~/Library/Preferences/com.freecad.FreeCAD.plist",
-    "~/Library/Preferences/FreeCAD",
-  ]
 end
