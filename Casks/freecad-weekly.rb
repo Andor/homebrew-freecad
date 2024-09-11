@@ -5,7 +5,7 @@ cask "freecad-weekly" do
   sha256 arm:   "8356da0bc497d8694c74ef8f5a6c1160c5ec63fb4789fa6af1c8bdaf4bc495d1",
          intel: "f072aa07640b87be870483c3aa5573071c7a29ad7d002cfe1f487101b3ff93b1"
 
-  url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD-weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
+  url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
       verified: "github.com/FreeCAD/FreeCAD-Bundle/"
 
   name "FreeCAD"
