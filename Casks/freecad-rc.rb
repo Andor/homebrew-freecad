@@ -1,9 +1,9 @@
 cask "freecad-rc" do
   arch arm: "arm64", intel: "intel-x86_64"
 
-  version "1.0rc1"
-  sha256 arm:   "499f1549e046ca1093f737d7f3b0cb5e378693353c4bfd652212427acd836a22",
-         intel: "52a6bcbac0d7f0f9ad1d3facb1c356f19d5e763e84181ddb92048c4ad1fc822c"
+  version "1.0rc2"
+  sha256 arm:   "5c7ad95c6098143422d4816d4b0a27813754135da7517c8d15d4b46967b8cdee",
+         intel: "583df43b14e138b51fb689545b9e6de4768869ca0a11a8ca4fc5794593d5d473"
 
      # https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/1.0rc1/    FreeCAD_1.0.0-conda-macOS-arm64-py311.dmg
   url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/#{version}/FreeCAD_1.0.0-conda-macOS-#{arch}-py311.dmg",
