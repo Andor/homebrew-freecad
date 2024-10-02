@@ -1,9 +1,9 @@
 cask "freecad-weekly" do
   arch arm: "arm64", intel: "intel-x86_64"
 
-  version "38843"
-  sha256 arm:   "636607e3925438e481c5b2accf4eab6b138140e3e0084098032067d55de5a13d",
-         intel: "f53855f0a51dffdc218d4fd81fe044e92b610ecd074febc2ea34f491e97a8b34"
+  version "38871"
+  sha256 arm:   "fe949650d4605a7e03d2c0f33671afec253b9e681736f9e2ec35a7d89ea2527b",
+         intel: "cfa64675f8fa72cae7b5e55fd94a22cc49747fb5edcb657de2d8f85ecc81d9ac"
 
   url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
       verified: "github.com/FreeCAD/FreeCAD-Bundle/"
