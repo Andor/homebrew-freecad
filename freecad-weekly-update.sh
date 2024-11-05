@@ -4,7 +4,7 @@ set -e -o pipefail
 
 # https://github.com/FreeCAD/FreeCAD-Bundle/releases/expanded_assets/weekly-builds
 
-version=39100
+version=39127
 intel_sha=$(curl -L https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$version-conda-macOS-x86_64-py311.dmg-SHA256.txt | awk '{print $1}')
 arm64_sha=$(curl -L https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$version-conda-macOS-arm64-py311.dmg-SHA256.txt | awk '{print $1}')
 
