@@ -11,4 +11,4 @@ arm64_sha=$(curl -L https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/
 
 perl -p \
      -e 's/^(  version \").*/${1}'$version'"/; s/^(  sha256 arm:   ").*$/${1}'$arm64_sha'",/; s/^(         intel: ").*$/${1}'$intel_sha'"/' \
-     -i Casks/freecad-weekly.rb
+     -i Casks/freecad@snapshot.rb
