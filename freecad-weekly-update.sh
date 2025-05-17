@@ -2,16 +2,24 @@
 
 set -e -o pipefail
 
-url=https://github.com/FreeCAD/FreeCAD-Bundle/releases/expanded_assets/weekly-builds
+api_url="https://api.github.com/repos/FreeCAD/FreeCAD/releases"
 
-# FreeCAD_weekly-builds-40444-conda-macOS-arm64-py311.dmg
-build_name=$(curl -s "$url" | grep -oE 'FreeCAD_weekly-builds-[0-9]+-conda-macOS-.*-py[0-9]+\.dmg' | head -1)
+# Fetch latest matching release and extract version and asset URL
+read -r version arm64 intel <<< $(curl -s "$api_url" | jq -r '
+  map(select(.tag_name | test("^weekly-[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}$"))) |
+  sort_by(.tag_name) |
+  reverse |
+  .[0] as $latest |
+  [
+    $latest.tag_name,
+    ($latest.assets[] | select(.name | test("^FreeCAD_weekly-[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}-macOS-arm64-py311\\.dmg$")) | .browser_download_url),
+    ($latest.assets[] | select(.name | test("^FreeCAD_weekly-[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}-macOS-x86_64-py311\\.dmg$")) | .browser_download_url)
+  ]
+  | @tsv
+')
 
-version="${build_name#*weekly-builds-}"
-version="${version%%-*}"
-
-intel_sha=$(curl -L https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$version-conda-macOS-x86_64-py311.dmg-SHA256.txt | awk '{print $1}')
-arm64_sha=$(curl -L https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-$version-conda-macOS-arm64-py311.dmg-SHA256.txt | awk '{print $1}')
+intel_sha=$(curl -L "${intel}-SHA256.txt" | awk '{print $1}')
+arm64_sha=$(curl -L "${arm64}-SHA256.txt" | awk '{print $1}')
 
 perl -p \
      -e 's/^(  version \").*/${1}'$version'"/; s/^(  sha256 arm:   ").*$/${1}'$arm64_sha'",/; s/^(         intel: ").*$/${1}'$intel_sha'"/' \

@@ -1,21 +1,16 @@
 cask "freecad@snapshot" do
   arch arm: "arm64", intel: "intel-x86_64"
 
-  version "41573"
-  sha256 arm:   "9a7937b9843daefbdf96c0439d5ced19a2e5f609833b16cc1237375f06c27a55",
-         intel: "dc98706a91f60d8a9d84d4221a32be7b9eae504934fb2cd82c95f5f4d29486f4"
+  version "weekly-2025.05.13"
+  sha256 arm:   "23f51a8b78a59422b643760ce6ebff9c74a7c849c56fe010a441a684006ba37a",
+         intel: "c238c286ad3be8ef42dffdae7dcd4e5b0f48de021e12ea903aa063b21eae4501"
 
-  url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
-      verified: "github.com/FreeCAD/FreeCAD-Bundle/"
+  url "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-#{version}/FreeCAD_weekly-#{version}-macOS-#{arch}-py311.dmg",
+    verified: "github.com/FreeCAD/FreeCAD/"
 
   name "FreeCAD"
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
-
-  livecheck do
-    url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/expanded_assets/weekly-builds"
-    regex(/<a href="\/FreeCAD\/FreeCAD-Bundle\/releases\/download\/weekly-builds\/FreeCAD_weekly-builds-(\d+)-conda-macOS-arm64-py311\.dmg"/)
-  end
 
   depends_on macos: ">= :mojave"
 
