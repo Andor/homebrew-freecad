@@ -18,9 +18,8 @@ read -r version arm64 intel <<< $(curl -s "$api_url" | jq -r '
   | @tsv
 ')
 
-# echo $version $intel $arm64
 version=${version##weekly-}
-# intel_sha=$(curl -L "${intel}-SHA256.txt" | awk '{print $1}')
+intel_sha=$(curl -L "${intel}-SHA256.txt" | awk '{print $1}')
 arm64_sha=$(curl -L "${arm64}-SHA256.txt" | awk '{print $1}')
 
 perl -p \
