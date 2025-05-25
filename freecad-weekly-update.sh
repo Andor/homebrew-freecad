@@ -24,4 +24,4 @@ arm64_sha=$(curl -L "${arm64}-SHA256.txt" | awk '{print $1}')
 
 perl -p \
      -e 's/^(  version \").*/${1}'$version'"/; s/^(  sha256 arm:   ").*$/${1}'$arm64_sha'",/; s/^(         intel: ").*$/${1}'$intel_sha'"/' \
-     -i Casks/freecad@snapshot.rb
+     -i Casks/freecad@weekly.rb
