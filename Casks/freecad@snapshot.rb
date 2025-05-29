@@ -1,9 +1,9 @@
 cask "freecad@snapshot" do
   arch arm: "arm64", intel: "intel-x86_64"
 
-  version "41837"
-  sha256 arm:   "fc86517419acd8d90b6e058e5f63f4f58777fabe406605badc7a65a4051533d0",
-         intel: "0ffde156fa21725e42568c2ce190f390db4c39fe5b905d2be2e0596cff850484"
+  version "41866"
+  sha256 arm:   "401b31d5fd07a9d2f9e1e55ff336a8c27976d67f46f9fea4dc208a14f7366b66",
+         intel: "58e1a658554d78d6612da2ee6b2ccd5b9675fe80216ff591ad6a657bf6162289"
 
   url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
     verified: "github.com/FreeCAD/FreeCAD/"
