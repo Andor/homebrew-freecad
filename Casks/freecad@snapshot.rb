@@ -1,7 +1,7 @@
 cask "freecad@snapshot" do
   arch arm: "arm64", intel: "intel-x86_64"
 
-  version arm: "42133"
+  version arm: "42133",
           intel: "42095"
 
   sha256 arm: "1e9de2ef3d08ed39b136fe89a3f72a4572d3983a3459f6721b82dcf53ac8ff98",

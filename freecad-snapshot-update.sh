@@ -17,7 +17,7 @@ arm_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/
 intel_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/${intel_build}-SHA256.txt" | awk '{print $1}')
 
 perl -pi -e "
-  s/^(  version arm: \").*/\${1}${arm_version}\"/;
+  s/^(  version arm: \").*/\${1}${arm_version},\"/;
   s/^(           intel: \").*/\${1}${intel_version}\"/;
   s/^(  sha256 arm:   \").*/\${1}${arm_sha}\",/;
   s/^(           intel: \").*/\${1}${intel_sha}\"/;
