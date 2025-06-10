@@ -17,10 +17,7 @@ arm_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/
 intel_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/${intel_build}-SHA256.txt" | awk '{print $1}')
 
 perl -0777 -p -e '
-  s/(on_arm do.+?version ")[^"]+(")/${1}'$arm_version'${2}/ms;
-  s/(on_arm do.+?sha256 ")[^"]+(")/${1}'$arm_sha'${2}/ms;
-
-  s/(on_intel do.+?version ")[^"]+(")/${1}'$intel_version'${2}/ms;
-  s/(on_intel do.+?sha256 ")[^"]+(")/${1}'$intel_sha'${2}/ms;
+  s/(on_arm do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$arm_version'${2}'$arm_sha'${3}/ms;
+  s/(on_intel do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$intel_version'${2}'$intel_sha'${3}/ms;
 ' \
      -i Casks/freecad@snapshot.rb
