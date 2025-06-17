@@ -2,8 +2,8 @@ cask "freecad@snapshot" do
   arch arm: "arm64", intel: "intel-x86_64"
 
   on_arm do
-    version "2025.06.09"
-    sha256 "3d18eecc366c6d3c2ad2f50fb1cdada84f57b0177556954524673d0d4a5eff9c"
+    version "2025.06.16"
+    sha256 "071315da4953fb394fbf473d2b28f0841bffb56da92af2b33adc1968af132106"
   end
   on_intel do
     version "2025.05.13"
