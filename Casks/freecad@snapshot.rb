@@ -3,11 +3,11 @@ cask "freecad@snapshot" do
 
   on_arm do
     version "42325"
-    sha256 "7a3566e47c064517050d1669906eaed550b76754f238e6d640000e75139a175e"
+    sha256 "47b38b7d0301c53cd93131ebc45cb7e8123dd44abc17d484586b6bdccdbde2bd"
   end
   on_intel do
     version "42325"
-    sha256 "da5aac6901f520bd374a32be4643f4a31f2b1fa30f4017c2622acd5d8d1ed70f"
+    sha256 "f0ac93d598c8664a09d65b10a1ca51861e6255bb786438e08b4fef34630fe7a0"
   end
 
   url "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/FreeCAD_weekly-builds-#{version}-conda-macOS-#{arch}-py311.dmg",
