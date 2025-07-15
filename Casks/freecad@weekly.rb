@@ -1,4 +1,4 @@
-cask "freecad@snapshot" do
+cask "freecad@weekly" do
   arch arm: "arm64", intel: "intel-x86_64"
 
   on_arm do
