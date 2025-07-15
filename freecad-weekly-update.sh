@@ -29,6 +29,9 @@ intel_url=$(echo "$intel_release" | jq -r '.assets[] | select(.name | test("-mac
 intel_sha=$(curl -sL "${intel_url}-SHA256.txt" | awk '{print $1}')
 intel_version="${intel_tag#weekly-}"
 
+echo "Latest ARM weekly: $arm_version"
+echo "Latest Intel weekly: $intel_version"
+
 perl -0777 -p -e '
   s/(on_arm do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$arm_version'${2}'$arm_sha'${3}/ms;
   s/(on_intel do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$intel_version'${2}'$intel_sha'${3}/ms;

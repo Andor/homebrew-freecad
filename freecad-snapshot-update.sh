@@ -16,6 +16,9 @@ intel_version=$(echo "$intel_build" | sed -E 's/FreeCAD_weekly-builds-([0-9]+)-.
 arm_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/${arm_build}-SHA256.txt" | awk '{print $1}')
 intel_sha=$(curl -sL "https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/${intel_build}-SHA256.txt" | awk '{print $1}')
 
+echo "Latest ARM snapshot: $arm_version"
+echo "Latest Intel snapshot: $intel_version"
+
 perl -0777 -p -e '
   s/(on_arm do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$arm_version'${2}'$arm_sha'${3}/ms;
   s/(on_intel do\s+version\s+")[^"]+("\s+sha256\s+")[^"]+(")/${1}'$intel_version'${2}'$intel_sha'${3}/ms;
