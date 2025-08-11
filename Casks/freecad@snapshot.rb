@@ -3,7 +3,7 @@ cask "freecad@snapshot" do
 
   on_arm do
     version "42885"
-    sha256 "88b00621d7d80ce9f63eaf95f7bf908f19d36dd6fcdc9cc8bd2be697a60215f5"
+    sha256 "11beb255ec1e4a3b8f677e75156f293aee873ccaadc5e0ce590a272bc5f81bec"
   end
   on_intel do
     version "42885"
