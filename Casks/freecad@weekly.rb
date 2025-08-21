@@ -17,7 +17,17 @@ cask "freecad@weekly" do
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
+  conflicts_with cask: [
+    "freecad",
+    "freecad@weekly",
+  ]
   depends_on macos: ">= :mojave"
 
   app "FreeCAD.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-rd", "com.apple.quarantine", "#{appdir}/FreeCAD.app"],
+                   sudo: false
+  end
 end
