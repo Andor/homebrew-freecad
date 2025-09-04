@@ -19,7 +19,7 @@ cask "freecad@weekly" do
 
   conflicts_with cask: [
     "freecad",
-    "freecad@weekly",
+    "freecad@snapshot",
   ]
   depends_on macos: ">= :mojave"
 
