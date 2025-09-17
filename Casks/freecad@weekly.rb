@@ -6,8 +6,8 @@ cask "freecad@weekly" do
     sha256 "652c6dda839d82c84293862977190d9b6d4f55dba18a7e6f43379b0bfee015f8"
   end
   on_intel do
-    version "2025.09.12"
-    sha256 "7f756f7edbe8b2c44acedc8e376d718cb0487d7347a9e500eb44c13c2eb9b5be"
+    version "2025.09.17"
+    sha256 "7528dce09800a2362b104d48c5d46e2cffef0314ac92a593b27b775f8551c0f1"
   end
 
   url "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-#{version}/FreeCAD_weekly-#{version}-macOS-#{arch}-py311.dmg",
