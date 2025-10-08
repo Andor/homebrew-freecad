@@ -2,8 +2,8 @@ cask "freecad@weekly" do
   arch arm: "arm64", intel: "intel-x86_64"
 
   on_arm do
-    version "2025.10.01"
-    sha256 "ff988f8134f90ef175e3a6827def40a61d1346f592f875fc5a533977fb1e12f1"
+    version "2025.10.08"
+    sha256 "aa69f0921f2d09ed8d46f05b37806bb3bfa7fcea77bf3906c70a1a3f215a88d1"
   end
   on_intel do
     version "2025.10.01"
