@@ -17,11 +17,7 @@ cask "freecad@weekly" do
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
-  conflicts_with cask: [
-    "freecad",
-    "freecad@snapshot",
-  ]
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "FreeCAD.app"
 
