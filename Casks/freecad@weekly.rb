@@ -17,13 +17,20 @@ cask "freecad@weekly" do
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :ventura"
 
-  app "FreeCAD.app"
+  app "FreeCAD.app", target: "FreeCAD_#{version}-#{arch}_weekly.app"
 
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-rd", "com.apple.quarantine", "#{appdir}/FreeCAD.app"],
                    sudo: false
   end
+
+  zap trash: [
+    "~/Library/Application Support/FreeCAD",
+    "~/Library/Caches/FreeCAD",
+    "~/Library/Preferences/com.freecad.FreeCAD.plist",
+    "~/Library/Preferences/FreeCAD",
+  ]
 end
