@@ -14,7 +14,7 @@ cask "freecad" do
 
   depends_on macos: ">= :ventura"
 
-  app "FreeCAD.app", target: "FreeCAD_#{version}-#{arch}.app"
+  app "FreeCAD.app", target: "FreeCAD-#{version}.app"
 
   zap trash: [
     "~/Library/Application Support/FreeCAD",

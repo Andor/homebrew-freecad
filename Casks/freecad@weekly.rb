@@ -19,13 +19,13 @@ cask "freecad@weekly" do
 
   depends_on macos: ">= :ventura"
 
-  app "FreeCAD.app", target: "FreeCAD_#{version}-#{arch}_weekly.app"
+  app "FreeCAD.app", target: "FreeCAD-weekly.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-rd", "com.apple.quarantine", "#{appdir}/FreeCAD.app"],
-                   sudo: false
-  end
+  # postflight do
+  #   system_command "/usr/bin/xattr",
+  #                  args: ["-rd", "com.apple.quarantine", "#{appdir}/FreeCAD-weekly.app"],
+  #                  sudo: false
+  # end
 
   zap trash: [
     "~/Library/Application Support/FreeCAD",
