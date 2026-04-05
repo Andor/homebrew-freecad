@@ -19,15 +19,17 @@ find_latest_release_with_asset() {
 }
 
 # https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.02.11/FreeCAD_weekly-2026.02.11-macOS-arm64-macOS15-py311.dmg
-arm_release=$(find_latest_release_with_asset "-macOS-arm64-macOS15-py311\\.dmg$")
+# https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.04.01/FreeCAD_weekly-2026.04.01-macOS11-arm64.dmg
+arm_release=$(find_latest_release_with_asset "-macOS11-arm64\\.dmg$")
 arm_tag=$(echo "$arm_release" | jq -r '.tag_name')
-arm_url=$(echo "$arm_release" | jq -r '.assets[] | select(.name | test("-macOS-arm64-macOS15-py311\\.dmg$")) | .browser_download_url')
+arm_url=$(echo "$arm_release" | jq -r '.assets[] | select(.name | test("-macOS11-arm64\\.dmg$")) | .browser_download_url')
 arm_sha=$(curl -sL "${arm_url}-SHA256.txt" | awk '{print $1}')
 arm_version="${arm_tag#weekly-}"
 
-intel_release=$(find_latest_release_with_asset "-macOS-x86_64-macOS10-py311\\.dmg$")
+# https://github.com/FreeCAD/FreeCAD/releases/download/weekly-2026.04.01/FreeCAD_weekly-2026.04.01-macOS10-x86_64.dmg
+intel_release=$(find_latest_release_with_asset "-macOS10-x86_64\\.dmg$")
 intel_tag=$(echo "$intel_release" | jq -r '.tag_name')
-intel_url=$(echo "$intel_release" | jq -r '.assets[] | select(.name | test("-macOS-x86_64-macOS10-py311\\.dmg$")) | .browser_download_url')
+intel_url=$(echo "$intel_release" | jq -r '.assets[] | select(.name | test("-macOS10-x86_64\\.dmg$")) | .browser_download_url')
 intel_sha=$(curl -sL "${intel_url}-SHA256.txt" | awk '{print $1}')
 intel_version="${intel_tag#weekly-}"
 
