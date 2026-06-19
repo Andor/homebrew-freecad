@@ -18,7 +18,7 @@ cask "freecad@weekly" do
   desc "3D parametric modeller"
   homepage "https://www.freecad.org/"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "FreeCAD.app", target: "FreeCAD-weekly.app"
 
