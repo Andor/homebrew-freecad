@@ -2,14 +2,14 @@ cask "freecad@weekly" do
   arch arm: "arm64", intel: "intel-x86_64"
 
   on_arm do
-    version "2026.06.10"
-    sha256 "6c4eb28e0762f4b6023c7028c89aa23b5cc9eeca68e2ef27f46a7018ada9c2c4"
+    version "2026.06.19"
+    sha256 "705d578d89072a7468e744e373a653fd342ffd25496debf4259b8f9ac146c7dc"
     url "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-#{version}/FreeCAD_weekly-#{version}-macOS11-#{arch}.dmg",
       verified: "github.com/FreeCAD/FreeCAD/"
   end
   on_intel do
-    version "2026.06.10"
-    sha256 "4d4f75f319870b39be194379ac71894373306dc6af188bc0aabb7ae9dd2271c5"
+    version "2026.06.19"
+    sha256 "b34fb16aff1b777315db505d2b880caadafa0e57560efe3adf49fe1adad1acd7"
     url "https://github.com/FreeCAD/FreeCAD/releases/download/weekly-#{version}/FreeCAD_weekly-#{version}-macOS10-#{arch}.dmg",
       verified: "github.com/FreeCAD/FreeCAD/"
   end
